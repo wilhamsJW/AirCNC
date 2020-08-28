@@ -1,7 +1,6 @@
 # AirCNC
 
-![Node](https://img.shields.io/badge/node-v12.18.3-green) ![Npm](https://img.shields.io/badge/nvm-6.9.0-green)
-
+![Node](https://img.shields.io/badge/node-v12.18.3-green) 
 Projeto criado na Semana OmniStack 9.0 da [Rocketseat](https://rocketseat.com.br)
 
 ## Estrutura
