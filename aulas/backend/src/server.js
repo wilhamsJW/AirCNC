@@ -9,12 +9,23 @@
  * o browser por padrão só executa o Get, usaremos o isominia para executar todos os métodos
  * 
  * Foi criado um servido pela mongodb, lá podemos colocar o banco de dados dessa aplicação de outras aplicações
+ * 
+ * Instalado uma dependecia chamada mongoose com npm i mongoose --save ou yarn add mongoose
+ * mongoose => é uma lib ou ferramenta para facilitar trabalhar com o monogodb e facilitar com os métodos get,post,put e delete
  */
 
 const express = require('express'); //express é uma framework para Node.js, existem diversas funcionalidades prontas dentro dele, inclusive as rotas da aplicação
+const mongoose = require('mongoose');
 const routes = require('./routes'); //se coloca ./ pq se não o node entende q é uma dependecia.
 
+
 const app = express();
+
+//url do servidor da mongodb, a partir do momento que criei um usuário e um db por lá, lembre de na url colocar sua senha e usuário
+mongoose.connect('mongodb://aircnc:aircnc80@aircnc-shard-00-00.jghmx.mongodb.net:27017,aircnc-shard-00-01.jghmx.mongodb.net:27017,aircnc-shard-00-02.jghmx.mongodb.net:27017/aircnc?ssl=true&replicaSet=atlas-hb60ts-shard-0&authSource=admin&retryWrites=true&w=majority', {
+    useNewUrlParser: true,   //essa duas linhas são configurações do mongodb e para evitar uns avisos no terminal
+    useUnifiedTopology: true,
+})
 
 app.use(express.json()); 
 app.use(routes);  
