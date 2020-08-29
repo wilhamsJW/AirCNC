@@ -13,6 +13,7 @@
 
 module.exports = {
     store(req, res) {
-        return res.json({ message: 'Hello!' })
+        //Apenas para teste, estou usando o isomonia para realizar esses teste
+        return res.json({ message: 'HelloO!' })
     }
 };
