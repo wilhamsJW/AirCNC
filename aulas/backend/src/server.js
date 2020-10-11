@@ -1,7 +1,19 @@
 /**Informações sobre o projeto
  * 
+ * Instalado o node com chocolatey... depois é só rodar o comando cinst nodejs.install --version 10.16.3
+ * dessa forma irá instalar o node e nom juntos pelo chocolatey
+ * caso queira o yarn é só rodar choco install yarn
+ * 
+ * Font: https://github.com/tonsky/FiraCode
+ * Após instalar a font bold dentro da pasta ttf do arquivo zipado, (clique na pasta duas vezes e instale uma font)
+ * após isso, dê um ctrl + shift + p e procure por settings.json e dentro do json coloque:
+ * "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true
+    prontinho! isso vai deixar o estilo do seu código mais bonito e lhe proporciona a união de
+    caracteres como por exemplo colocar sinal de igual e sinal de maior formam uma seta => <->
+ * 
  * Foi instalado o express com npm i express -save
- * instalado nodemon que é uma dependecia para teste com npm i nodemon -d, -d indica depençia
+ * instalado nodemon que é uma dependecia para teste com npm i nodemon -d, -d indica dependençia
  * use yarn dev para teste locais ou npm run dev
  * o nome dev foi colocado no packge.json em uma proprideadade chamada scripts
  * 
@@ -50,10 +62,10 @@ app.post('/', (req, res) => {                                     //req = reques
 
 
 //Uttlizando o método get e query params  => req.query => acessar query params para filtros
-/*
+
 app.get('/users', (req, res) => {                                                                   
     return res.json({ idade: req.query.idade }); 
-   });*/
+   });
 
 
 
@@ -77,10 +89,10 @@ app.put('/users/:id', (req, res) => {
 /*
    app.put('/users/:id', (req, res) => {                                                                            
     return res.json({ id: req.body }); 
-   }); 
+   }); */
 
 
-app.listen(3333);*/
+app.listen(3333);
 
 
 
