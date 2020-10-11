@@ -27,25 +27,47 @@
  */
 
 const express = require('express'); //express é uma framework para Node.js, existem diversas funcionalidades prontas dentro dele, inclusive as rotas da aplicação
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 const routes = require('./routes'); //se coloca ./ pq se não o node entende q é uma dependecia.
 
 
-const app = express();
+const app = express(); //aqui o express está sendo usado pra facilitar nossas rotas, existem parenteses pq ele é uma funçao
 
+/*
 //mongoose.connect => conexão como o DB 
 //url do servidor da mongodb, a partir do momento que criei um usuário e um db por lá, lembre de na url colocar sua senha e usuário
 mongoose.connect('mongodb://aircnc:aircnc80@aircnc-shard-00-00.jghmx.mongodb.net:27017,aircnc-shard-00-01.jghmx.mongodb.net:27017,aircnc-shard-00-02.jghmx.mongodb.net:27017/aircnc?ssl=true&replicaSet=atlas-hb60ts-shard-0&authSource=admin&retryWrites=true&w=majority', {
     useNewUrlParser: true,   //essa duas linhas são configurações do mongodb e para evitar uns avisos no terminal
     useUnifiedTopology: true,
-})
+})*/
 
 app.use(express.json()); 
 app.use(routes);  
 
-app.listen(3333);
+//app.listen(3333);
 
 
+
+/**Lembrete: A cada alteração no node terá que reinciar o servidor o node por si só não enxerga novas
+ * alterações no código. Temos uma solução: Instalar uma lib chamada nodemom, yarn add nodemon -D ou npm install nodemom
+ * esse -D é pra avisar que essa depencia é apenas pra desenvolvimento do projeto e em produção não se usa
+ * isso. ele irá pra devDependecies que siginifica dependecias q serão usada em apenas usadas em ambiente de desenvolvimento
+ * 
+ * Após instalar o Nodemom, vá em package.json e acrescente =>  
+ * "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+ */
+
+
+
+//Enviando uma informação com formato JSON
+
+app.get('/', (req, res) => {
+   return res.json( { 'message': 'hello word, Welcome Wilhams'});
+});
+
+app.listen(7575); 
 
 
 
@@ -53,8 +75,8 @@ app.listen(3333);
 /*
 app.post('/', (req, res) => {                                     //req = request ou solicitação, res = response ou resposta
 
- //return res.send('Hello Word!');                              //res.send, apenas para teste. isso enviará uma reposta ao browser.
- return res.json({ message: 'Testando o Post com Isominia' }); //com json se envia um objeto ou um array, message passa a ser uma propriedade com o valor de hello word
+ return res.send('Hello Word!');                              //res.send, apenas para teste. isso enviará uma reposta ao browser.
+ //return res.json({ message: 'Testando o Post com Isominia' }); //com json se envia um objeto ou um array, message passa a ser uma propriedade com o valor de hello word
 });*/
 
 
@@ -62,10 +84,10 @@ app.post('/', (req, res) => {                                     //req = reques
 
 
 //Uttlizando o método get e query params  => req.query => acessar query params para filtros
-
+/*
 app.get('/users', (req, res) => {                                                                   
     return res.json({ idade: req.query.idade }); 
-   });
+   });*/
 
 
 
@@ -85,14 +107,14 @@ app.put('/users/:id', (req, res) => {
    app.use(express.json());                  //preciso fazer isso pq o express não lê em JSON, então preciso falar pra ele
                                             //lê em JSON, é como que isso fosse plugin, algo pra ajudar o express a entender o JSON
 
-   app.use(routes);                        //obriogatoriamente tem q vir depois do express.json(); se não ele não vai funcionar, ele lê por fila                                           
+   app.use(routes);                        //obrigatoriamente tem q vir depois do express.json(); se não ele não vai funcionar, ele lê por fila                                           
 /*
    app.put('/users/:id', (req, res) => {                                                                            
     return res.json({ id: req.body }); 
    }); */
 
 
-app.listen(3333);
+//app.listen(3333);
 
 
 
