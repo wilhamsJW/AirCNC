@@ -4,12 +4,11 @@ const mongoose = require('mongoose');
  * dentro da pasta config temos um araquivo chamado upload com as configurações dessa lib
   */
 
-const RevisitSchema = new mongoose.Schema({
-    photo: String,
-    name: String,
-    phone: Number,
-    content: String,
-    publicacoes: [String], //isso aqui vai ser um array com várias strings dentro
+const SpotSchema = new mongoose.Schema({
+    thumbnail: String,
+    company: String,
+    price: Number,
+    techs: [String], //isso aqui vai ser um array com várias strings dentro
     user: {
         type: mongoose.Schema.Types.ObjectId, //Quando o usuário é criado com email, o insominia gera uma id, é justamente essa id q estou pegandao aqui
         ref: 'User'
@@ -19,4 +18,4 @@ const RevisitSchema = new mongoose.Schema({
 
 });
 
-module.export = mongoose.model('Revisit', RevisitSchema);
+module.export = mongoose.model('Spot', SpotSchema);
