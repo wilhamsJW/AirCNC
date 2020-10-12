@@ -5,7 +5,6 @@ const mongoose = require('mongoose'); //conexão com o Db utilizando o mongoose 
 //exemplo de campos: nome,email,idade,whatsapp... ex. de tipos: string. number, boolean etc..
 const UserSchema = new mongoose.Schema({
     email: String,
-
 });
 
 module.exports = mongoose.model('User', UserSchema); //primeiro parãemtro é nome do model, nesse caso é User
