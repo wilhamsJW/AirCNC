@@ -13,7 +13,6 @@ module.exports = {
             user: user_id,
             thumbnail: filename,
             company,
-            //phone: Number,
             techs: techs.split(',').map(tech => tech.trim()), //Publicações foi definida que seria um array, o split irá definir a vírgula como separador de cada item do meu array, o map irá percorrer todos os itens do meu array e o trim tira espaços antes e depois de cada string ou item do array
             price  
         })
