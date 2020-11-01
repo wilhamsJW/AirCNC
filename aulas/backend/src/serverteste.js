@@ -8,15 +8,15 @@
  * caso queira o yarn é só rodar choco install yarn
  * 
  * Font: https://github.com/tonsky/FiraCode
- * Após instalar a font bold dentro da pasta ttf do arquivo zipado, (clique na pasta duas vezes e instale uma font)
+ * Após instalar a font bold dentro da pasta ttf do arquivo zipado, (clique na pasta duas vezes e instale uma font, a bold de preferençia)
  * após isso, dê um ctrl + shift + p e procure por settings.json e dentro do json coloque:
  * "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true
     prontinho! isso vai deixar o estilo do seu código mais bonito e lhe proporciona a união de
     caracteres como por exemplo colocar sinal de igual e sinal de maior formam uma seta => <->
  * 
- * Foi instalado o express com npm i express -save
- * instalado nodemon que é uma dependecia para teste com npm i nodemon -d, -d indica dependençia
+ * Foi instalado o express com: npm i express -save
+ * instalado nodemon que é uma dependecia para teste com: npm i nodemon -d, -d indica dependençia
  * use yarn dev para teste locais ou npm run dev
  * o nome dev foi colocado no packge.json em uma proprideadade chamada scripts
  * 
