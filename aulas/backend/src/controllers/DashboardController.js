@@ -1,5 +1,9 @@
 const Spot = require('../models/Spot');
 
+/**************************************************** 
+ * Exibindo tecnologias escolhidas pela id do user  * 
+ * **************************************************/
+
 module.exports = {
     async show(req, res) { 
         const { user_id } = req.headers;

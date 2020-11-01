@@ -1,5 +1,8 @@
 /** ---->>>> Informações sobre o projeto <<<<-----
  * 
+ * Para rodar o projeto:  1 -> cd aulas, 2 -> cd backend, 3 -> npm run dev ou npm start, vai depender do q foi colocado no package.json do projeto, olhe e confira
+ * tem que estar dentro da pasta exata pra rodar o projeto.
+ * 
  * Instalado o node com chocolatey... depois é só rodar o comando cinst nodejs.install --version 10.16.3
  * dessa forma irá instalar o node e nom juntos pelo chocolatey
  * caso queira o yarn é só rodar choco install yarn
@@ -17,7 +20,7 @@
  * use yarn dev para teste locais ou npm run dev
  * o nome dev foi colocado no packge.json em uma proprideadade chamada scripts
  * 
- * Instalado o insominia para executar os métodos, get, Post, Put e delete
+ * Instalado o insominia para executar os métodos, (para conusmir APIs) get, Post, Put e delete
  * o browser por padrão só executa o Get, usaremos o isominia para executar todos os métodos
  * 
  * Foi criado um servido pela mongodb, lá podemos colocar o banco de dados dessa aplicação de outras aplicações

@@ -1,9 +1,9 @@
 const User = require('../models/User'); //importando o schema, aí se encontra o email ou todos os registros de um cliente de cadastro se caso tivesse nesa aplicação
 
-//Aqui se encontra tudo relaciona a sessão, como login, logout etc..
+//Aqui se encontra tudo relacionado a sessão, como login, logout etc..
 /**
  * Teremos aqui alguns métodos, sendo eles: index, show, store, upadate e destroy
- * index => método que cria ou retorna uma listagem da Session
+ * index => método que cria ou retorna uma listagem de Sessions ou sessões
  * show  => lista uma única sessão
  * store => criar uma sessão
  * update => alterar uma sessão
@@ -17,7 +17,7 @@ module.exports = {
         //Apenas para teste, estou usando o isomonia para realizar esses teste
         //return res.json({ message: 'HelloO!' })
 
-        /**Aqui vamos pegar o emauil que o usuáraio cadastrou, o email vem do req.body
+        /**Aqui vamos pegar o email que o usuáraio cadastrou, o email vem do req.body
          * Temos uma explicação disso no arquivo serverteste.js nessa mesma pasta
          */
 
@@ -30,13 +30,13 @@ module.exports = {
 
 
          //Variável pra verificar usuário existente                                         
-         let user = await User.findOne({email: email});
-           if(!user) {    //se isso aqui não vier setado ou seja aqui dentro não vai ter um email cadastrado em User (User é um arquivo q está cadastrando os emails) o if irá executar a ação de crir um novo email 
+         let user = await User.findOne({email: email}); //método find tem vários parãmetro pra fazer busca, um deles é findOne busca por id 
+           if(!user) {    //se isso aqui não vier setado ou seja aqui dentro não vai ter um email cadastrado em User (User é um arquivo q está cadastrando os emails) o if irá executar a ação de criar um novo email 
                  const user = await User.create({email});  //await só deixará a próxima linha ser executada quando essa informação for finalizadsa no bd
                                                           //para usarmos await temos q usar o async no inicio da função
               } 
                                           
-         return res.json(user);                                         
+         return res.json(user); //resposta no formato de JSON                                        
     
 
     }
