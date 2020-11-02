@@ -13,9 +13,6 @@ const SpotSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId, //Quando o usuário é criado com email, o insominia gera uma id, é justamente essa id q estou pegandao aqui
         ref: 'User'
     }
-
-
-
 });
 
 module.exports = mongoose.model('Spot', SpotSchema)
