@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
-import { Switch } from 'react-router-dom';
 
-export default function Login() {
+export default function Login({ history }) {  //history => é usado para navegação, para redirecionar o user para outra rota ex.: history.push('/dashboard');
 
                                            //useState('') => os valores começam vazios pq não há valores
   const [email, setEmail] = useState(''); //email => me retorna o valor atual do email
@@ -23,7 +22,11 @@ console.log(_id);
 //localStorage => funciona como um banco de dados dentro do nosso browser
 //apenas com essa linha abaixo, já estará salvo o id na nossa aplicação
 //vá na aba Application do devtools e procure localstorage e verá a informação lá
+//poderemos pegar essa informação em qq local da aplicação, estamos pegando no Dashboard/index.js
 localStorage.setItem('user', _id); 
+
+history.push('/dashboard'); //redirect do user pra outra página, após ser logado
+
 }
 
     return (

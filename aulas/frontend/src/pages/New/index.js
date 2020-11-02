@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default function Mew() {
+export default function New() {
     return <div></div>
 }
