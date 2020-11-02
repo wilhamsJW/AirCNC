@@ -1,38 +1,25 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/*Fonte acima importada do googlefonts, essa é a roboto, selcionado os tamnhos 400 e 700, peguei esse link acima no import do próprio site*/
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body, #root {
+  min-height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background: #000 url('./assets/background_aricnc.jpeg') no-repeat;
+  background-size: cover;                          /*para cobrir toda a tela, se adaptar a tela automaticamente*/
+  -webkit-font-smoothing: antialiased !important; /*implementa uma propriedade similar, mas com valores diferentes: -webkit-font-smoothing. Isto só funciona no Mac OS X/macOS.*/
+                                                 /*antialiased - Suaviza a fonte no nível do pixel, ao contrário do subpixel. Muda a renderização de subpixel para o antialiasing para texto claro em fundos escuros e faz com que pareça mais suave.*/                                               
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+body, input, button {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif; /*Sempre coloque vários fonts pq se não carregar uma ele irá pegar a outra*/
+  font-size: 14px;
+} 

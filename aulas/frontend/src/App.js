@@ -3,13 +3,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        <p>
-          Wilhams
-        </p>
-      </header>
-    </div>
+    <div className="container"></div>
   );
 }
 
