@@ -1,2 +1,7 @@
+Instale o npm
+comando => npm instal
+
 Instalado o AXIOS para chamadas http
-npm install axios
+comando => npm install axios
+
+Instaldo o cors no backend, o arquivo INFORMAÇÔES tem todos os detalhes

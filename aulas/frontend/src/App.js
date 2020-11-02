@@ -8,9 +8,13 @@ function App() {
   const [email, setEmail] = useState(''); //email => me retorna o valor atual do email
                                          //A função setEmail => serve pra atualizar o valor do useState que no caso é atualizar o valor da variável email, valor q o user digitou ou alterou 
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    console.log(email);
+    //console.log(email);
+
+    const response = await api.post('/sessions', { email: email }); //em casos que a chave e o valor são os mesmos, podemos colocar apenas campo com email ao invés de dois, deixei os dois pra ser mostrado como se faz a maneira tradicional
+    console.log(response);   //nesse console irá mostrar um erro e não será possivel enviar a requisição pra api, o CORS bloqueia isso, pq o CORS protege sua API pra que niguém consuma sua API e roube seus dados
+                            //comando =>  npm install cors ou yarn add cors se o yarn tiver instalado
   }
 
   return (
