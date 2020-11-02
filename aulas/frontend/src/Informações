@@ -4,4 +4,7 @@ comando => npm instal
 Instalado o AXIOS para chamadas http
 comando => npm install axios
 
-Instaldo o cors no backend, o arquivo INFORMAÇÔES tem todos os detalhes
+Instaldo o cors no backend, o arquivo INFORMAÇÔES no backend tem todos os detalhes
+
+Instalado o react-router-dom
+comando: npm i react-router-dom --save
