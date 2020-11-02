@@ -1,24 +1,13 @@
 const User = require('../models/User'); //importando o schema, aí se encontra o email ou todos os registros de um cliente de cadastro se caso tivesse nesa aplicação
 
-//Aqui se encontra tudo relacionado a sessão, como login, logout etc..
-/**
- * Teremos aqui alguns métodos, sendo eles: index, show, store, upadate e destroy
- * index => método que cria ou retorna uma listagem de Sessions ou sessões
- * show  => lista uma única sessão
- * store => criar uma sessão
- * update => alterar uma sessão
- * destroy => remover, deletar ou destruir uma sessão
- * 
- * esses são métodos disponiveis dentro de um controller. 
- */
-
 module.exports = {
     async store(req, res) {
         //Apenas para teste, estou usando o isomonia para realizar esses teste
         //return res.json({ message: 'HelloO!' })
 
-        /**Aqui vamos pegar o email que o usuáraio cadastrou, o email vem do req.body
-         * Temos uma explicação disso no arquivo serverteste.js nessa mesma pasta
+        /**Aqui vamos pegar o email que o usuário cadastrou, o email vem do req.body
+         * req.body => é apenas o corpo da aplicação, exepmplo: um formulário q envia um email é considerado o req.body
+         * Temos uma explicação disso no arquivo INFORMAÇÂO.js nessa mesma pasta
          */
 
          //Podemos fazer dessa forma:
@@ -36,7 +25,9 @@ module.exports = {
                                                           //para usarmos await temos q usar o async no inicio da função
               } 
                                           
-         return res.json(user); //resposta no formato de JSON                                        
+         return res.json(user); //resposta no formato de JSON, essa resposta é justamente 
+                               //o que aparece no console no momento que o o form é submetido, vemos esse console em 
+                              //App.js no frontend, dentro da function handleSubmit(e)                                           
     
 
     }

@@ -138,3 +138,16 @@ app.put('/users/:id', (req, res) => {
  * Put = editar alguma informaçãpo
  * Delete = deletar
  */
+
+
+ //Aqui se encontra tudo relacionado a sessão, como login, logout etc..
+/**
+ * Teremos aqui alguns métodos, sendo eles: index, show, store, upadate e destroy
+ * index => método que cria ou retorna uma listagem de Sessions ou sessões
+ * show  => lista uma única sessão
+ * store => criar uma sessão
+ * update => alterar uma sessão
+ * destroy => remover, deletar ou destruir uma sessão
+ * 
+ * esses são métodos disponiveis dentro de um controller. 
+ */
