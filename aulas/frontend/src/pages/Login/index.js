@@ -17,7 +17,6 @@ console.log(response);   //nesse console irá mostrar um erro e não será possi
 
 //Caso queira só pegar o _id de dentro do response com destructuring
 const { _id } = response.data;
-console.log(_id); 
 
 //localStorage => funciona como um banco de dados dentro do nosso browser
 //apenas com essa linha abaixo, já estará salvo o id na nossa aplicação

@@ -8,11 +8,12 @@ const SpotSchema = new mongoose.Schema({
     thumbnail: String,
     company: String,
     price: Number,
-    techs: [String], //isso aqui vai ser um array com várias strings dentro
+    techs: [String], //isso aqui vai ser um array com várias strings dentro por isso q tá dessa forma
     user: {
-        type: mongoose.Schema.Types.ObjectId, //Quando o usuário é criado com email, o insominia gera uma id, é justamente essa id q estou pegandao aqui
+        type: mongoose.Schema.Types.ObjectId, //Quando o usuário é criado com email, o mongoose gera uma id, é justamente essa id q estou pegandao aqui
         ref: 'User'
     }
 });
 
-module.exports = mongoose.model('Spot', SpotSchema)
+module.exports = mongoose.model('Spot', SpotSchema) //primeiro parãemetro é nome do model, nesse caso é Spot
+                                                   //2° parãmetro é o Schema dele que é o SpotSchema
