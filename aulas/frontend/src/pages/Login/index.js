@@ -23,9 +23,10 @@ console.log(_id);
 //apenas com essa linha abaixo, já estará salvo o id na nossa aplicação
 //vá na aba Application do devtools e procure localstorage e verá a informação lá
 //poderemos pegar essa informação em qq local da aplicação, estamos pegando no Dashboard/index.js
+
 localStorage.setItem('user', _id); 
 
-history.push('/dashboard'); //redirect do user pra outra página, após ser logado
+history.push('/dashboard'); //redirect do user pra outra página, após ser logado, tem q passar o history lá em cima como parâmetro na função
 
 }
 
