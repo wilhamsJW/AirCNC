@@ -12,14 +12,13 @@ module.exports = {
 
          //Podemos fazer dessa forma:
          //const email = req.body.email
-
-         //E dessa forma, usando o destructuring com {}
+         //E dessa forma, usando o destructuring com => {}
          //irá buscar email dentro de req.body
          const { email } = req.body;
 
 
          //Variável pra verificar usuário existente                                         
-         let user = await User.findOne({email: email}); //método find tem vários parãmetro pra fazer busca, um deles é findOne busca por id 
+         let user = await User.findOne({email: email}); //findOne => método find tem vários parãmetro pra fazer busca, um deles é findOne busca por id 
            if(!user) {    //se isso aqui não vier setado ou seja aqui dentro não vai ter um email cadastrado em User (User é um arquivo q está cadastrando os emails) o if irá executar a ação de criar um novo email 
                  const user = await User.create({email});  //await só deixará a próxima linha ser executada quando essa informação for finalizadsa no bd
                                                           //para usarmos await temos q usar o async no inicio da função
