@@ -11,14 +11,14 @@ const User = require('../models/User');
 module.exports = {
 
     //Filtro para quando o usuário for buscar alguma informação
-    async index(req, res) {            //index foi uma requisição criada no insominia, lá eu coloquei um nome e valor, q irá levar o user a rota da escolha da informação q ele escolheu
+    async index(req, res) {            //isso pode ser testado no insominia
         const { tech } = req.query;   //req.query => acessar query params para filtros  
 
         //Listar apenas as informações da escolha do usuário
         const spots = await Spot.find({ techs: tech }); //techs => é o nosso campo no db em Spot.js, tech é o valor acima q virá com um valor dentro, 
                                                        //tech => valor da informação que o usuário escolheu
                                                       //Suponhamos q dentro de tech tenha a escolha chamada de => "laravel"
-                                                     //Spot.find => vai procurar "laravel" dentro de techs
+                                                     //Spot.find => vai procurar "laravel" dentro de techs e me trazer todas s buscas encontradas com o nome "laravel"
 
         return res.json(spots);
 
