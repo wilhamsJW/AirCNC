@@ -1,5 +1,5 @@
 const Spot = require('../models/Spot');
-const User = require('../models/User');
+const User = require('../models/User'); //model de User foi importado para pegarmo a id
 
 /****************************************************************
  *  Este arquivo está controlando o Spot.js e User.js em models *
@@ -19,6 +19,7 @@ module.exports = {
                                                        //tech => valor da informação que o usuário escolheu
                                                       //Suponhamos q dentro de tech tenha a escolha chamada de => "laravel"
                                                      //Spot.find => vai procurar "laravel" dentro de techs e me trazer todas s buscas encontradas com o nome "laravel"
+                                                    //Spot.find => tbm tem acesso ao DB 
 
         return res.json(spots);
 
@@ -49,7 +50,7 @@ module.exports = {
             price  
         })
 
-        //console.log(req.body);  //
+        console.log(req.body);  //
         //console.log(req.file); //só temos o file por conta do multer  
         return res.json(spot);
     }

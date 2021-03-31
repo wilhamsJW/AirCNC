@@ -18,11 +18,17 @@ routes.post('users', (req, res) => {
 //mongoose.connect => conexão como o DB 
 //url do servidor da mongodb, a partir do momento que criei um usuário e um db por lá, lembre de na url colocar sua senha e usuário
 //se a conexão de erradao configure a versão pra uma menor ou maior
+// Há um video no meu drive explicando a instalação do mongoose
 
 mongoose.connect('mongodb://wilhams:wilhams@meuapp-shard-00-00.yuq04.mongodb.net:27017,meuapp-shard-00-01.yuq04.mongodb.net:27017,meuapp-shard-00-02.yuq04.mongodb.net:27017/myapp?ssl=true&replicaSet=atlas-bvjouk-shard-0&authSource=admin&retryWrites=true&w=majority', {
     useNewUrlParser: true,   //essa duas linhas são configurações do mongodb e para evitar uns avisos no terminal
     useUnifiedTopology: true,
 })
+
+// mongoose.connect('mongodb://wilhams:wilhams@meuapp-shard-00-00.jghmx.mongodb.net:27017,aircnc-shard-00-01.jghmx.mongodb.net:27017,aircnc-shard-00-02.jghmx.mongodb.net:27017/myapp?ssl=true&replicaSet=atlas-hb60ts-shard-0&authSource=admin&retryWrites=true&w=majority', {
+//     useNewUrlParser: true,   //essa duas linhas são configurações do mongodb e para evitar uns avisos no terminal
+//     useUnifiedTopology: true,
+// })
 
 /*********************************
  * Informação sobre o uso do CORS *

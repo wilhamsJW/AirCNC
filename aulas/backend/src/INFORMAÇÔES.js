@@ -30,6 +30,9 @@
  * 
  * Instalado uma dependecia chamada mongoose com npm i mongoose --save ou yarn add mongoose
  * mongoose => é uma lib ou ferramenta para facilitar trabalhar com o monogodb e facilitar com os métodos get,post,put e delete
+ * 
+ * /**Lembrete: instalamos uma ferramenta chamada multer com yarn add multer, ela serve pra lidar com formatos Multipart form, que serve pra lidar com uploads de imagens
+ * dentro da pasta config temos um arquivo chamado upload com as configurações dessa lib
  */
 
  

@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
   */
 
 const SpotSchema = new mongoose.Schema({
-    thumbnail: String,
+    thumbnail: String, 
     company: String,
     price: Number,
     techs: [String], //isso aqui vai ser um array com várias strings dentro por isso q tá dessa forma
