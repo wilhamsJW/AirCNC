@@ -18,7 +18,9 @@ routes.post('/sessions', SessionController.store); //.store pq foi o método cri
 routes.post('/spots', upload.single('thumbnail'), SpotController.store);  //upload.single('thumbnail') => passando o parametro da imagem
 routes.get('/spots', SpotController.index);
 routes.get('/dashboard', DashboardController.show);
-routes.post('/spot/:spot_id/bookings', BookingController.store);
+routes.post('/spot/:spot_id/bookings', BookingController.store); //isso é um tipo de rota encadeada, usamos post nessa rota para criação de uma nova reserva, 
+                                                                //bokkings é reserva, então essa rota diz assim: "o user quer criar uma nova reserva 
+                                                               //com esse id q seria spot_id"
 
 //exportando as rotas
 module.exports = routes;

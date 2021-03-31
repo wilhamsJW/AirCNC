@@ -20,13 +20,14 @@ module.exports = {
         });
 
         /**Aqui irá mostrar as informações do user e o spot ao invés de mostrar só as id's como no código acima
-         * irá trazer o email, a foto carregada, nome da empresa, preõ, data ou seja tudo q tem a ver com o usuário e com
+         * irá trazer o email, a foto carregada, nome da empresa, preço, data ou seja tudo q tem a ver com o usuário e com
          * as spot escolhida
         */
         await booking.populate('spot').populate('user').execPopulate();
 
         /**populate => método para popular o spot e popular o user
          * execPopulate() => irá executar o populate
+         * esse populate serve mais ou menos como um relacionamento de tabelas de um DB, conseguir trazer as informações de spot e user e juntar elas
          */
         
         return res.json(booking);
