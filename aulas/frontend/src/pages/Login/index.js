@@ -9,11 +9,12 @@ export default function Login({ history }) {  //history => é usado para navega�
 
 async function handleSubmit(e) {
 e.preventDefault();
-//console.log(email);
+console.log(email);
 
+//Abaixo é uma chamada pra minha API, não estamos passando a rota toda, apenas o que vem depois da base_url ou url
 const response = await api.post('/sessions', { email: email }); //em casos que a chave e o valor são os mesmos, podemos colocar apenas campo com email ao invés de dois, deixei os dois pra ser mostrado como se faz a maneira tradicional
 console.log(response);   //nesse console irá mostrar um erro e não será possivel enviar a requisição pra api, o CORS bloqueia isso, pq o CORS protege sua API pra que niguém consuma sua API e roube seus dados
-//comando =>  npm install cors ou yarn add cors se o yarn tiver instalado
+//comando =>  npm install cors ou yarn add cors se o yarn tiver instalado (deve ser instalasdo no backend)
 
 //Caso queira só pegar o _id de dentro do response com destructuring
 const { _id } = response.data;
