@@ -1,8 +1,11 @@
 import React, { useState, useMemo } from 'react'; // useMemo => oberva a mudança das váriáveis do useState
 import camera from '../../assets/camera.svg';
+
+import api from '../../services/api';
+
 import './styles.css'
 
-export default function New() {
+export default function New({ history }) {
 
     const [company, setCopany] = useState('');
     const [techs, setTechs] = useState('');
@@ -17,8 +20,23 @@ export default function New() {
         return thumbnail ? URL.createObjectURL(thumbnail) : null
     }, [thumbnail])
 
-    const enviar = () => {
+    async function enviar(event) {
 
+        event.preventDefault();
+
+        const data = new FormData();
+        const user_id = localStorage.getItem('user');
+        
+        data.append('company', company)
+        data.append('techs', techs)
+        data.append('price', price)
+        data.append('thumbnail', thumbnail)
+
+        await api.post('/spots', data, {
+            headers: { user_id }
+        })
+
+        history.push('/dashboard')
     }
 
     return (
