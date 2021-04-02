@@ -23,11 +23,12 @@ const SpotSchema = new mongoose.Schema({
    } 
 });
 
-//Abaixo estamos criandao um campo que não existe no banco ou seja não está nesses dados acima, esse campo será criado pelo JS
-//no mongo chamamos isso de 'virtual' 
+// Abaixo estamos criandao um campo que não existe no banco ou seja não está nesses dados acima, esse campo será criado pelo JS
+// no mongo chamamos isso de 'virtual' 
 // thumbnail_urlé apenas o nome do campo, em seguida fazemos um GET e abrimos uma function, tem function enão arrow function
 // pq com a function consigo pegar qq propriedade com o this
 // o caminho da url é o files, esse arquivo foi definido no server.js
+// isso foi feito para que a imagem pudesse ser enviada para o front end
 SpotSchema.virtual('thumbnail_url').get(function(){
     return `http://localhost:3333/files/${this.thumbnail}`
 })

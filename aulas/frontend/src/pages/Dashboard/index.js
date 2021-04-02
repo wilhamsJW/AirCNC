@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import api from '../../services/api';
+import './styles.css';
+import { Link } from 'react-router-dom'; // serve pra criar links e mandar o usuário pra outra rota
 
 //Aqui serão exibidos, a lista de spots que o user escolheu
 
@@ -40,13 +42,18 @@ export default function Dashboard() {
                     {/* è necessário colocar uma key quando se faz um map ou uma estrutura de repetição, pra evitar um aviso no console, o react deseja q seja uma informação única, por exemplo um id */}
                     {/* A tag HEADER foi usada pq será um background de foto, e com essa tag conseguimos fazer todas as fotos ficarem do mesmo tamanho */}
 
-                    <header /> 
-                    <strong>{spot.company}</strong><br />
-                    <span>R$ - {spot.price}</span>
+                    <header style={{ backgroundImage: `url(${spot.thumbnail_url})` }}/> 
+                    <strong>{spot.company} </strong>
+                    <span>{spot.price ? `R$ ${spot.price} /dia` : 'GRATUITO'}</span>
                      
                 </li>
             ))}
             </ul>
+
+                <Link to="/new">
+                    <button className="btn">Cadastrar nova empresa</button>
+                </Link>
+
         </>
     )
 }
