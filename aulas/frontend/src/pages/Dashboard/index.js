@@ -41,7 +41,7 @@ export default function Dashboard() {
                     {/* A tag HEADER foi usada pq será um background de foto, e com essa tag conseguimos fazer todas as fotos ficarem do mesmo tamanho */}
 
                     <header /> 
-                    <strong>{spot.company}</strong>
+                    <strong>{spot.company}</strong><br />
                     <span>R$ - {spot.price}</span>
                      
                 </li>
