@@ -2,7 +2,7 @@ const express = require('express');      //express é uma framework para Node.js
 const mongoose = require('mongoose');   //mongoose = é uma lib ou ferramenta que irá ajudar a trabalhar com o mongodb; quando formos usar os métodos http iremos usar o mongoose
 const routes = require('./routes');    //se coloca ./, se não o node entende q é uma dependecia, assim como express acima não tem ./ pq é uma dependeçia ou lib
 const cors = require('cors');         //protege pra que niguém consuma minha api, apenas o endereço q eu solicitei dentro dele como exemplo abaixo
-
+const path = require('path');        //para usar todas os caminhos da sua aplicação, path faz parte do express
 
 const app = express(); //aqui o express está sendo usado pra facilitar nossas rotas, existem parenteses pq ele é uma funçao
 
@@ -25,11 +25,6 @@ mongoose.connect('mongodb://wilhams:wilhams@meuapp-shard-00-00.yuq04.mongodb.net
     useUnifiedTopology: true,
 })
 
-// mongoose.connect('mongodb://wilhams:wilhams@meuapp-shard-00-00.jghmx.mongodb.net:27017,aircnc-shard-00-01.jghmx.mongodb.net:27017,aircnc-shard-00-02.jghmx.mongodb.net:27017/myapp?ssl=true&replicaSet=atlas-hb60ts-shard-0&authSource=admin&retryWrites=true&w=majority', {
-//     useNewUrlParser: true,   //essa duas linhas são configurações do mongodb e para evitar uns avisos no terminal
-//     useUnifiedTopology: true,
-// })
-
 /*********************************
  * Informação sobre o uso do CORS *
  * *******************************/
@@ -37,5 +32,9 @@ mongoose.connect('mongodb://wilhams:wilhams@meuapp-shard-00-00.yuq04.mongodb.net
 
 app.use(cors()); //assim permite q qualquer aplicação acesse minha API, porém isso não é algo em produção e sim para estudo 
 app.use(express.json()); //para o express entender o formato json
+app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads'))) //__dirname =>  dirname é uma variável global q informa qual o diretótio do arquivo atual e assim encaminha até a pasta solicitada 
+                                                                           //mais explicações sobre __dirname estão no arquivo uploads
+// express.static -> é uma forma que o express usa para lidar com arquivos estáticos, como: pdf, fotos etc..  
+// geralmente usado quando temos algum tipo de upload na nossa aplicação 
 app.use(routes);  
 app.listen(3333);
