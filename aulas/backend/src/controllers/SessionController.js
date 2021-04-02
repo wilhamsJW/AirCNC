@@ -15,7 +15,10 @@ module.exports = {
          //E dessa forma, usando o destructuring com => {}
          //irá buscar email dentro de req.body
          //fazemos isso pq usamos o nome da const igual ao nome do corpo que é email
+         //req.body é uma propriedade da requisição, se vc dê um console em req vc irá várias info vindo da requisição do front
+         //e verá q as informações enviadas chegam no body
          const { email } = req.body;
+        //  console.log('req', req)
 
 
          //Variável pra verificar usuário existente, ela procura o email vindo do req.body e verifica se existe no banco, se não existir, essa

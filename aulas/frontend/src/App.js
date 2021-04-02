@@ -1,4 +1,4 @@
-import React from 'react'; //useState serve para criação de estados
+import React from 'react'; 
 import './App.css';
 import logo from './assets/logo.svg';
 

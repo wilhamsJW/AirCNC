@@ -22,27 +22,26 @@ export default function Dashboard() {
                 headers: { user_id }
             });
 
-            console.log("Dashboard", response.data);
+            console.log("response", response);
             setSpots(response.data);   // response.data => visualiza tudo o que tem em DashboardController no backend e em models/spots
                                       // só conseguimos fazer essa comunicação por conta do axios que está na pasta services/api.js
                                      // o axios faz toda essa comunicação entre o front e o back de forma muito inteligente 
         } 
 
-        loadSpots();
+        loadSpots(); //invocandso a função
     }, []);
 
     return (
         <>
-            <ul className="spot-list"></ul>
+            <ul className="spot-list">
             {spots.map(spot => (
-                <li>
-
-                    <header></header>
-                    <strong>{spot.company}</strong>
-                    <span>{spot.price}</span>
-                     
+                <li key={spot._id}> 
+                    <header /> 
+                    <strong>{spot.company}</strong><br />
+                    <span>R$ - {spot.price}</span>
                 </li>
             ))}
+            </ul>
         </>
     )
 }
