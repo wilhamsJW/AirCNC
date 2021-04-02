@@ -68,6 +68,12 @@ button {
 }
 
 .content form label span {
+  font-weight: normal;
+  color: #999;
+  font-size: 12px;
+}
+
+.content form label span {
   font-size: 14px;
   color: #444;
   font-weight: bold;
