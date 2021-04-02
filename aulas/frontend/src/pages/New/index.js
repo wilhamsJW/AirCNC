@@ -24,6 +24,10 @@ export default function New({ history }) {
 
         event.preventDefault();
 
+        // Estamos usando uma estrutura de dados para enviar ao back diferente, não estamos usando um JSON pq o back está 
+        // esperando uma estrutura chamada Multipart Form, então usamos essa estrutura no data para enviar os dados
+        // estamos usando essa estrutura no back por conta do upload q estamos fazendo
+
         const data = new FormData();
         const user_id = localStorage.getItem('user');
         
