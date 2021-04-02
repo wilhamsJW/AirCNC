@@ -36,9 +36,14 @@ export default function Dashboard() {
             <ul className="spot-list">
             {spots.map(spot => (
                 <li key={spot._id}> 
+                
+                    {/* è necessário colocar uma key quando se faz um map ou uma estrutura de repetição, pra evitar um aviso no console, o react deseja q seja uma informação única, por exemplo um id */}
+                    {/* A tag HEADER foi usada pq será um background de foto, e com essa tag conseguimos fazer todas as fotos ficarem do mesmo tamanho */}
+
                     <header /> 
-                    <strong>{spot.company}</strong><br />
+                    <strong>{spot.company}</strong>
                     <span>R$ - {spot.price}</span>
+                     
                 </li>
             ))}
             </ul>
