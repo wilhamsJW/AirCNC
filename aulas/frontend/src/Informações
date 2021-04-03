@@ -8,3 +8,17 @@ Instaldo o cors no backend, o arquivo INFORMAÇÔES no backend tem todos os deta
 
 Instalado o react-router-dom
 comando: npm i react-router-dom --save
+
+INFORMAÇÔES para Android
+
+1 - npm install -g expo-cli
+(talvez tenha q reiniciar a máquina)
+
+ Após a instalar rode o comando: 
+2 - expo init mobile - irá aparecer qual template vc quer usar
+ vamos usar essa:  blank                 a minimal app as clean as an empty canvas
+ esse blank é um app em branco quase não tem funcionalidade
+ (mobile é apenas um nome qq)
+3 -  Após os passos acima irá criar a pasta mobile
+entre nela com cd mobile e rode o comando:
+yarn start (o yarn já deve tá instalado na sua máquina se nã tiver instale)

@@ -51,7 +51,7 @@ module.exports = {
         })
 
         // console.log(req.body);  //
-        //console.log(req.file); //só temos o file por conta do multer  
+        console.log('req.file',req); //só temos o file por conta do multer  
         return res.json(spot);
     }
 };
