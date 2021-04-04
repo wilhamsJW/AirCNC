@@ -22,3 +22,8 @@ INFORMAÇÔES para Android
 3 -  Após os passos acima irá criar a pasta mobile
 entre nela com cd mobile e rode o comando:
 yarn start (o yarn já deve tá instalado na sua máquina se nã tiver instale)
+
+4 - yarn add react-navigation - Lib para navegação em react-native
+
+5 - expo install react-native-gesture-handler react-native-reanimated
+
